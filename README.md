@@ -24,7 +24,7 @@ git clone https://gitee.com/zzxxsix/zzxxsix-plugin.git
 
 > `/看看腿` ，看白丝，看黑丝  
 
-> `/三次元 ， 随机三次元图片  
+> `/三次元` ， 随机三次元图片  
 
 > `/三次元r18` ， 随机三次元r18+图片  
 
