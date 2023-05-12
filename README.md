@@ -2,7 +2,8 @@
 # alemon-bot随机图片小插件
 
 ## 介绍
-alemon-bot的TS小插件，ts文件放到`alemon-bot/example`文件夹即可使用
+alemon-bot的TS小插件，ts文件放到`alemon-bot/example`文件夹即可使用  
+
 有涩涩哦~
 
 
