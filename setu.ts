@@ -10,7 +10,7 @@ export class ercy extends plugin {
 	[parameter: string]: PluginType
 	constructor() {
 		super({
-			dsc: '二次元图片',
+			dsc: '图片',
 			rule: [{
 					reg: "^/tag.*$", //二次元图片，可后面接标签，比如/tag萝莉
 					fnc: 'tag'
@@ -48,7 +48,7 @@ export class ercy extends plugin {
 		let url;
 		for (let i = 0; i < 5; i++) {
 			try {
-				let url = `https://api.lolicon.app/setu/v2?tag=${tagContent}&siae=small`;
+				let url = `https://api.lolicon.app/setu/v2?tag=${tagContent}`;
 				const response = await fetch(url);
 				const data = await response.json(); // 解析 JSON 数据
 				const imageUrl = data.data[0].urls.original;
@@ -56,7 +56,7 @@ export class ercy extends plugin {
 
 				e.reply(segment.at(e.msg.author.id), segment.image(imageUrl))
 			} catch (error) {
-				let urla = `https://api.lolicon.app/setu/v2?siae=small`;
+				let urla = `https://api.lolicon.app/setu/v2`;
 				const response = await fetch(urla);
 				const data = await response.json(); // 解析 JSON 数据
 				const imageUrla = data.data[0].urls.original;
@@ -77,7 +77,7 @@ export class ercy extends plugin {
 			const randomNum = Math.floor(Math.random() * 2) + 1;
 			if (randomNum == 1) {
 
-				let url = `https://api.lolicon.app/setu/v2?tag=${tagContent}&siae=small&r18=1`;
+				let url = `https://api.lolicon.app/setu/v2?tag=${tagContent}&r18=1`;
 				const response = await fetch(url);
 				const data = await response.json(); // 解析 JSON 数据
 				const imageUrl = data.data[0].urls.original;
