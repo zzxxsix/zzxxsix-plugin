@@ -16,7 +16,7 @@ export class ercy extends plugin {
 					fnc: 'tag'
 				},
 				{
-					reg: "^/r18.*$", //r18+二次元图片，可后面接标签，需要自己删
+					reg: "^/r18.*$", //r18+二次元图片，可后面接标签
 					fnc: 'setu'
 				},
 				{
@@ -40,36 +40,37 @@ export class ercy extends plugin {
 	}
 
 
-	async tag(e: Messgetype) {
+	async tag(e) {
 
 		const tagContent = e.msg.content.replace(/^\/tag\s*/, '');
 		console.log(tagContent);
 
 		let url;
-		for (let i = 0; i < 5; i++) {
+		for (let i = 0; i < 20; i++) {
 			try {
-				let url = `https://api.lolicon.app/setu/v2?tag=${tagContent}`;
+				let url = `https://api.lolicon.app/setu/v2?tag=${tagContent}&size=regular`;
 				const response = await fetch(url);
 				const data = await response.json(); // 解析 JSON 数据
-				const imageUrl = data.data[0].urls.original;
+				const imageUrl = data.data[0].urls.regular;
 				console.log(imageUrl);
 
 				e.reply(segment.at(e.msg.author.id), segment.image(imageUrl))
+
 			} catch (error) {
-				let urla = `https://api.lolicon.app/setu/v2`;
+				let urla = `https://api.lolicon.app/setu/v2?size=regular`;
 				const response = await fetch(urla);
 				const data = await response.json(); // 解析 JSON 数据
-				const imageUrla = data.data[0].urls.original;
+				const imageUrla = data.data[0].urls.regular;
 				console.log(imageUrla);
 
 				e.reply(segment.at(e.msg.author.id), segment.image(imageUrla))
 			}
-			return true
 		}
+			return true
 	}
 
 
-	async setu(e: Messgetype) {
+	async setu(e) {
         const tagContent = e.msg.content.replace(/^\/r18\s*/, '');
 		console.log(tagContent);
 
@@ -108,8 +109,8 @@ export class ercy extends plugin {
 
 		for (let i = 0; i < 3; i++) {
 			const randomNum = Math.floor(Math.random() * urls.length);
-			const res = await fetch(urls[randomNum]);
-			e.reply(segment.at(e.msg.author.id), segment.image(res.url));
+			
+			e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
 		}
 
 		return true;
@@ -123,8 +124,8 @@ export class ercy extends plugin {
 
 		for (let i = 0; i < 4; i++) {
 			const randomNum = Math.floor(Math.random() * urls.length);
-			const res = await fetch(urls[randomNum]);
-			e.reply(segment.at(e.msg.author.id), segment.image(res.url));
+						
+			e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
 		}
 
 		return false;
@@ -140,9 +141,8 @@ export class ercy extends plugin {
 		];
 
 		for (let i = 0; i < 3; i++) {
-			const randomNum = Math.floor(Math.random() * urls.length);
-			const res = await fetch(urls[randomNum]);
-			e.reply(segment.at(e.msg.author.id), segment.image(res.url));
+			const randomNum = Math.floor(Math.random() * urls.length);		
+			e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
 		}
 
 		return true;
@@ -155,8 +155,8 @@ export class ercy extends plugin {
 
 		for (let i = 0; i < 3; i++) {
 			const randomNum = Math.floor(Math.random() * urls.length);
-			const res = await fetch(urls[randomNum]);
-			e.reply(segment.at(e.msg.author.id), segment.image(res.url));
+						
+			e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
 		}
 
 		return true;
