@@ -44,54 +44,62 @@ export class ercy extends plugin {
 
 		const tagContent = e.msg.content.replace(/^\/tag\s*/, '');
 		console.log(tagContent);
-
-		let url;
-		for (let i = 0; i < 20; i++) {
+		let flag = 0;
+		let url = `https://api.lolicon.app/setu/v2?tag=${tagContent}&size=regular`;
+		while (flag < 2) {
 			try {
-				let url = `https://api.lolicon.app/setu/v2?tag=${tagContent}&size=regular`;
 				const response = await fetch(url);
 				const data = await response.json(); // 解析 JSON 数据
 				const imageUrl = data.data[0].urls.regular;
-				console.log(imageUrl);
-
-				e.reply(segment.at(e.msg.author.id), segment.image(imageUrl))
-
+				const res = await e.reply(segment.at(e.msg.author.id), segment.image(imageUrl));
+				if (res === true) {
+					flag++;
+					console.log(flag);
+				}
 			} catch (error) {
 				let urla = `https://api.lolicon.app/setu/v2?size=regular`;
 				const response = await fetch(urla);
 				const data = await response.json(); // 解析 JSON 数据
 				const imageUrla = data.data[0].urls.regular;
-				console.log(imageUrla);
 
-				e.reply(segment.at(e.msg.author.id), segment.image(imageUrla))
+				const res = await e.reply(segment.at(e.msg.author.id), segment.image(imageUrla))
+				if (res === true) {
+					flag++;
+					console.log(flag);
+				}
 			}
+
 		}
-			return true
+
+		return true
+
 	}
 
 
 	async setu(e) {
-        const tagContent = e.msg.content.replace(/^\/r18\s*/, '');
+		const tagContent = e.msg.content.replace(/^\/r18\s*/, '');
 		console.log(tagContent);
-
-		for (let i = 0; i < 3; i++) {
+		let flag = 0;
+		while (flag < 2) {
 			const randomNum = Math.floor(Math.random() * 2) + 1;
 			if (randomNum == 1) {
-
 				let url = `https://api.lolicon.app/setu/v2?tag=${tagContent}&r18=1`;
 				const response = await fetch(url);
 				const data = await response.json(); // 解析 JSON 数据
 				const imageUrl = data.data[0].urls.original;
-				console.log(imageUrl);
 
-				e.reply(segment.at(e.msg.author.id), segment.image(imageUrl));
+				const res = await e.reply(segment.at(e.msg.author.id), segment.image(imageUrl));
+				if (res === true) {
+					flag++;
+					console.log(flag);
+				}
 			} else {
 				let urla = `https://www.acy.moe/api/r18`;
-				let res = await fetch(urla);
-
-				console.log(res.url);
-
-				e.reply(segment.at(e.msg.author.id), segment.image(res.url));
+				const res = await e.reply(segment.at(e.msg.author.id), segment.image(urla));
+				if (res === true) {
+					flag++;
+					console.log(flag);
+				}
 			}
 
 		}
@@ -107,10 +115,14 @@ export class ercy extends plugin {
 			"https://image.anosu.top/pixiv/direct?size=small"
 		];
 
-		for (let i = 0; i < 3; i++) {
+		let flag = 0;
+		while (flag < 2) {
 			const randomNum = Math.floor(Math.random() * urls.length);
-			
-			e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
+			const res = await e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
+			if (res === true) {
+				flag++;
+				console.log(flag);
+			}
 		}
 
 		return true;
@@ -122,13 +134,17 @@ export class ercy extends plugin {
 			"https://api.caonm.net/api/bhs/h.php"
 		];
 
-		for (let i = 0; i < 4; i++) {
+		let flag = 0;
+		while (flag < 2) {
 			const randomNum = Math.floor(Math.random() * urls.length);
-						
-			e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
+			const res = await e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
+			if (res === true) {
+				flag++;
+				console.log(flag);
+			}
 		}
 
-		return false;
+		return true;
 	}
 
 
@@ -140,9 +156,14 @@ export class ercy extends plugin {
 			"https://api.caonm.net/api/mnt/index.php"
 		];
 
-		for (let i = 0; i < 3; i++) {
-			const randomNum = Math.floor(Math.random() * urls.length);		
-			e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
+		let flag = 0;
+		while (flag < 2) {
+			const randomNum = Math.floor(Math.random() * urls.length);
+			const res = await e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
+			if (res === true) {
+				flag++;
+				console.log(flag);
+			}
 		}
 
 		return true;
@@ -153,10 +174,14 @@ export class ercy extends plugin {
 			"https://imagesapi.sesepic.top/cos"
 		];
 
-		for (let i = 0; i < 3; i++) {
+		let flag = 0;
+		while (flag < 2) {
 			const randomNum = Math.floor(Math.random() * urls.length);
-						
-			e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
+			const res = await e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
+			if (res === true) {
+				flag++;
+				console.log(flag);
+			}
 		}
 
 		return true;
