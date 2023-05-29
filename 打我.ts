@@ -1,4 +1,4 @@
-import plugin from '../src/lib/plugins'
+import { plugin } from 'alemon'
 
 let ks = 0
 let ks2 = 0
