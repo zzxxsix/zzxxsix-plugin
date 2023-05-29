@@ -1,4 +1,4 @@
-import plugin from '../src/lib/plugins'
+import { plugin } from 'alemon'
 
 export class ercy extends plugin {
 	constructor() {
