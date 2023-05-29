@@ -1,13 +1,6 @@
 import plugin from '../src/lib/plugins'
-import {
-	EType,
-	Messgetype,
-	PluginType
-} from '../src/lib/types'
-
 
 export class ercy extends plugin {
-	[parameter: string]: PluginType
 	constructor() {
 		super({
 			dsc: '图片',
@@ -42,15 +35,26 @@ export class ercy extends plugin {
 
 	async tag(e) {
 
-		const tagContent = e.msg.content.replace(/^\/tag\s*/, '');
+		const tagContent = e.msg.content.replace(/^(<@!\d+>\s*)?\/tag\s*/, '');
 		console.log(tagContent);
 		let flag = 0;
-		let url = `https://api.lolicon.app/setu/v2?tag=${tagContent}&size=regular`;
+		let url = [
+		`https://api.lolicon.app/setu/v2?tag=${tagContent}&size=original`,
+		`https://api.lolicon.app/setu/v2?tag=${tagContent}&size=regular`,
+		`https://api.lolicon.app/setu/v2?tag=${tagContent}&size=small`
+		]
+		let imageUrl;
 		while (flag < 2) {
+		const randomNum = Math.floor(Math.random() * url.length);
 			try {
-				const response = await fetch(url);
+				const response = await fetch(url[randomNum]);
 				const data = await response.json(); // 解析 JSON 数据
-				const imageUrl = data.data[0].urls.regular;
+				if(randomNum==0){
+				 imageUrl = data.data[0].urls.original;
+				}else if(randomNum==1){
+				 imageUrl = data.data[0].urls.regular;
+				}else{imageUrl = data.data[0].urls.small;}
+				
 				const res = await e.reply(segment.at(e.msg.author.id), segment.image(imageUrl));
 				if (res === true) {
 					flag++;
@@ -77,7 +81,7 @@ export class ercy extends plugin {
 
 
 	async setu(e) {
-		const tagContent = e.msg.content.replace(/^\/r18\s*/, '');
+		const tagContent = e.msg.content.replace(/^(<@!\d+>\s*)?\/18\s*/, '');
 		console.log(tagContent);
 		let flag = 0;
 		while (flag < 2) {
