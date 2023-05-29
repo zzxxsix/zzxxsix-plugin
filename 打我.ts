@@ -1,9 +1,4 @@
 import plugin from '../src/lib/plugins'
-import {
-	EType,
-	Messgetype,
-	PluginType
-} from '../src/lib/types'
 
 let ks = 0
 let ks2 = 0
@@ -45,12 +40,8 @@ export class HitMe extends plugin {
 				const regex = /\d+/;
 				const match = str.match(regex);
 				user_id = match[0];
-
-
-
-				console.log(user_id)
-
 				e.reply(segment.at(user_id) + '给你20秒，跟我来把猜拳，赢了我就不打你，输了给我寄！你先发,石头，剪刀，布，出吧')
+				console.log(user_id)
 
 				ks2 = 1
 
