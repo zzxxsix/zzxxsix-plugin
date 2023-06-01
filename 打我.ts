@@ -1,4 +1,4 @@
-import { plugin } from 'alemon'
+import { plugin, segment } from 'alemon'
 
 let ks = 0
 let ks2 = 0
