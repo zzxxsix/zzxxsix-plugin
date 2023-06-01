@@ -1,4 +1,4 @@
-import { plugin } from 'alemon'
+import { plugin, segment } from 'alemon'
 
 export class ercy extends plugin {
 	constructor() {
