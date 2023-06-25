@@ -12,7 +12,7 @@ alemon-bot仓库：[☞Github](https://github.com/ningmengchongshui/alemon-bot)/
 
 
 ```
-git clone https://gitee.com/zzxxsix/zzxxsix-plugin.git 
+git clone  https://github.com/zzxxsix/zzxxsix-plugin.git
 
 ```
 
