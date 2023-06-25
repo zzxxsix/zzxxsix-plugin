@@ -24,10 +24,10 @@ export class ercy extends plugin {
 					reg: "^/三次元.*$",
 					fnc: 'sanyc' //随机三次元图片
 				},
-				{
+				/*{
 					reg: "^/三次元r18.*$",
 					fnc: 'sanycr18' //随机三次元r18+图片
-				},
+				},*/
 			]
 		})
 	}
@@ -75,7 +75,7 @@ export class ercy extends plugin {
 
 		}
 
-		return true
+		return false;
 
 	}
 
@@ -107,7 +107,7 @@ export class ercy extends plugin {
 			}
 
 		}
-		return true;
+		return false;
 	}
 
 
@@ -129,49 +129,63 @@ export class ercy extends plugin {
 			}
 		}
 
-		return true;
+		return false;
 	}
 
 	async kkt(e) {
 		const urls = [
-			"https://api.caonm.net/api/bhs/b.php",
-			"https://api.caonm.net/api/bhs/h.php"
+			"http://api.yujn.cn/api/heisi.php",
+			"http://api.yujn.cn/api/baisi.php",
+			"http://api.yujn.cn/api/duitang.php?type=image&msg=白丝",
+			"http://api.yujn.cn/api/duitang.php?type=image&msg=黑丝",
+			"http://api.yujn.cn/api/tui.php",
+			"http://shanhe.kim/api/tu/hs.php",
+			"https://api.f4team.cn/API/meizi/api.php?type=image"
 		];
 
 		let flag = 0;
 		while (flag < 2) {
 			const randomNum = Math.floor(Math.random() * urls.length);
-			const res = await e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
+			let resA = await fetch(urls[randomNum])
+			console.log(resA.url);
+			const res = await e.reply(segment.at(e.msg.author.id), segment.image(resA.url));
 			if (res === true) {
 				flag++;
 				console.log(flag);
 			}
 		}
 
-		return true;
+		return false;
 	}
 
 
 	async sanyc(e) {
 		const urls = [
-			"https://api.caonm.net/api/mnt/index.php",
-			"https://api.vvhan.com/api/girl",
-			"http://dsyai.club/api/youhuotu.php",
-			"https://api.caonm.net/api/mnt/index.php"
+		"http://dsyai.club/api/youhuotu.php",
+		"https://cdn.seovx.com/?mom=302",
+		"http://api.yujn.cn/api/yangyan.php",
+		"http://api.yujn.cn/api/yht.php",
+		"http://api.yujn.cn/api/cos.php",
+		"http://api.yujn.cn/api/xjjtp.php?",
+		"http://api.yujn.cn/api/jk.php?",
+		"http://api.yujn.cn/api/yscos.php?"
 		];
 
 		let flag = 0;
 		while (flag < 2) {
 			const randomNum = Math.floor(Math.random() * urls.length);
-			const res = await e.reply(segment.at(e.msg.author.id), segment.image(urls[randomNum]));
+			let resA = await fetch(urls[randomNum])
+			console.log(resA.url);
+			const res = await e.reply(segment.at(e.msg.author.id), segment.image(resA.url));
 			if (res === true) {
 				flag++;
 				console.log(flag);
 			}
 		}
 
-		return true;
+		return false;
 	}
+	
 	async sanycr18(e) {
 		const urls = [
 			"https://imagesapi.sesepic.top/3r18",
@@ -188,7 +202,7 @@ export class ercy extends plugin {
 			}
 		}
 
-		return true;
+		return false;
 	}
 
 
