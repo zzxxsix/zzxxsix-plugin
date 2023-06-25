@@ -65,8 +65,7 @@ export class HitMe extends plugin {
 				if (i == 1) {
 					let msg = '我出剪刀，我输了，给你张图吧。快谢谢我！没图就是我反悔了(o゜▽゜)o☆'
 					e.reply(msg)
-					e.reply(segment.image('https://api.caonm.net/api/bhs/b.php'))
-					//https://iw233.cn/API/Random.php
+					e.reply(segment.image('http://api.yujn.cn/api/jk.php?'))
 
 
 				}
@@ -90,7 +89,7 @@ export class HitMe extends plugin {
 				if (i == 2) {
 					let msg = '我出布，我输了，给你张图吧。快谢谢我！没图就是我反悔了(o゜▽゜)o☆'
 					e.reply(msg)
-					e.reply(segment.image('https://api.caonm.net/api/bhs/b.php'))
+					e.reply(segment.image('http://api.yujn.cn/api/jk.php?'))
 
 				}
 				ks2 = 0
@@ -100,7 +99,7 @@ export class HitMe extends plugin {
 				if (i == 0) {
 					let msg = '我出石头，我输了，给你张图吧。快谢谢我！没图就是我反悔了(o゜▽゜)o☆'
 					e.reply(msg)
-					e.reply(segment.image('https://api.caonm.net/api/bhs/b.php'))
+					e.reply(segment.image('http://api.yujn.cn/api/jk.php?'))
 
 				}
 				if (i == 1) {
@@ -145,8 +144,7 @@ export class HitMe extends plugin {
 				if (i == 1) {
 					let msg = '我出剪刀，我输了，给你张图吧。快谢谢我！没图就是我反悔了(o゜▽゜)o☆'
 					e.reply(msg)
-					e.reply(segment.image('https://api.caonm.net/api/bhs/b.php'))
-					//https://iw233.cn/API/Random.php
+					e.reply(segment.image('http://api.yujn.cn/api/jk.php?'))
 
 
 				}
@@ -171,7 +169,7 @@ export class HitMe extends plugin {
 				if (i == 2) {
 					let msg = '我出布，我输了，给你张图吧。快谢谢我！没图就是我反悔了(o゜▽゜)o☆'
 					e.reply(msg)
-					e.reply(segment.image('https://api.caonm.net/api/bhs/b.php'))
+					e.reply(segment.image('http://api.yujn.cn/api/jk.php?'))
 
 				}
 				ks = 0
@@ -181,7 +179,7 @@ export class HitMe extends plugin {
 				if (i == 0) {
 					let msg = '我出石头，我输了，给你张图吧。快谢谢我！没图就是我反悔了(o゜▽゜)o☆'
 					e.reply(msg)
-					e.reply(segment.image('https://api.caonm.net/api/bhs/b.php'))
+					e.reply(segment.image('http://api.yujn.cn/api/jk.php?'))
 				}
 				if (i == 1) {
 					e.reply('我出剪刀，你输了，给我寄！')
