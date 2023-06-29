@@ -81,7 +81,7 @@ export class ercy extends plugin {
 			flagA++;
 		}
 		if (flagA >= 50) {
-			e.reply(segment.at(e.msg.author.id), "没找到图，再来一次吧！");
+			e.reply(segment.at(e.msg.author.id)+"没找到图，再来一次吧！");
 		}
 		return false;
 
@@ -118,7 +118,7 @@ export class ercy extends plugin {
 			flagA++;
 		}
 		if (flagA >= 50) {
-			e.reply(segment.at(e.msg.author.id), "没找到图，再来一次吧！");
+			e.reply(segment.at(e.msg.author.id)+"没找到图，再来一次吧！");
 		}
 		return false;
 
@@ -142,10 +142,15 @@ export class ercy extends plugin {
 				flag++;
 				console.log(flag);
 			}
+		    flagA++;
 		}
-
+		if (flagA >= 50) {
+			e.reply(segment.at(e.msg.author.id)+"没找到图，再来一次吧！");
+		}
 		return false;
+
 	}
+
 
 	async kkt(e) {
 		const urls = [
@@ -172,7 +177,7 @@ export class ercy extends plugin {
 			flagA++;
 		}
 		if (flagA >= 50) {
-			e.reply(segment.at(e.msg.author.id), "没找到图，再来一次吧！");
+			e.reply(segment.at(e.msg.author.id)+"没找到图，再来一次吧！");
 		}
 		return false;
 
@@ -205,7 +210,7 @@ export class ercy extends plugin {
 			flagA++;
 		}
 		if (flagA >= 50) {
-			e.reply(segment.at(e.msg.author.id), "没找到图，再来一次吧！");
+			e.reply(segment.at(e.msg.author.id)+"没找到图，再来一次吧！");
 		}
 		return false;
 
@@ -229,7 +234,7 @@ export class ercy extends plugin {
 			flagA++;
 		}
 		if (flagA >= 50) {
-			e.reply(segment.at(e.msg.author.id), "没找到图，再来一次吧！");
+			e.reply(segment.at(e.msg.author.id)+"没找到图，再来一次吧！");
 		}
 		return false;
 
