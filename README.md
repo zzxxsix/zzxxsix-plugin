@@ -28,7 +28,9 @@ git clone  https://github.com/zzxxsix/zzxxsix-plugin.git
 
 > `/三次元` ， 随机三次元图片  
 
-> `/三次元r18` ， 随机三次元r18+图片  
+
+## 插件  bqb.ts功能  表情包  
+发送`/小黑子`，`/柴郡`，`/布布`，`/mc酱`, `/兽猫酱`，得到对应表情包
 
 
 # 免责声明
